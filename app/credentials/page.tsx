@@ -5,8 +5,24 @@ import { ScrollReveal } from '@/components/motion/scroll-reveal';
 import { CTASection } from '@/components/sections/cta-section';
 import { Breadcrumbs } from '@/components/layout/breadcrumbs';
 import { institutionalCredentials, statutoryCompliance, statusLabels } from '@/lib/credentials';
-import { Landmark, Building2, FileText, CreditCard, Factory, Store, Users, FileCheck, MapPin, Receipt, ShieldCheck, Award, Clock } from 'lucide-react';
+//import { Landmark, Building2, FileText, CreditCard, Factory, Store, Users, FileCheck, MapPin, Receipt, ShieldCheck, Award, Clock } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
+import {
+  Landmark,
+  Building2,
+  FileText,
+  CreditCard,
+  Factory,
+  Store,
+  Users,
+  FileCheck,
+  MapPin,
+  Receipt,
+  ShieldCheck,
+  Award,
+  Clock,
+} from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Credentials & Compliance — Government, Banking & Institutional',
   description:
@@ -17,12 +33,12 @@ export const metadata: Metadata = {
 const heroImage =
   'https://images.pexels.com/photos/16760546/pexels-photo-16760546.jpeg?auto=compress&cs=tinysrgb&w=1920';
 
-const credentialIcons: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const credentialIcons: Record<string, LucideIcon> = {
   Landmark,
   Building2,
 };
 
-const complianceIcons: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const complianceIcons: Record<string, LucideIcon> = {
   Receipt,
   Factory,
   CreditCard,
@@ -32,6 +48,7 @@ const complianceIcons: Record<string, React.ComponentType<{ className?: string; 
   FileCheck,
   MapPin,
 };
+
 
 const statusStyles = {
   confirmed: { dot: 'bg-green-500', label: 'text-green-400' },

@@ -21,7 +21,8 @@ export function ScrollReveal({
   as = 'div',
 }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, viewportOnce);
+  const inViewOptions = viewportOnce as Parameters<typeof useInView>[1];
+  const isInView = useInView(ref, inViewOptions);
   const prefersReducedMotion = useReducedMotion();
   const MotionTag = motion[as];
 
