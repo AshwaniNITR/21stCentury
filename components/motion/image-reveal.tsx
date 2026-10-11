@@ -32,7 +32,10 @@ export function ImageReveal({
   overlay = false,
 }: ImageRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, viewportOnce);
+  const isInView = useInView(ref, {
+    ...viewportOnce,
+    margin: viewportOnce.margin as any,
+  });
   const prefersReducedMotion = useReducedMotion();
 
   return (
